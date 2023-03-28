@@ -1,0 +1,92 @@
+.works-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.container .ion-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0);
+  z-index: 1010;
+  transition: 1s ease;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container .ion-icon.apart {
+  color: black;
+  rotate: -315deg;
+}
+.container .ion-icon.apart:active {
+  transition: 0.2s;
+  rotate: -345deg;
+  scale: 0.9;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.works-container .work-card {
+  width: 200px;
+  border-radius: 0.5rem;
+  /* height: 150px; */
+  aspect-ratio: 16 / 9;
+  border: 1px solid black;
+  position: absolute;
+  translate: 0px 0px;
+  transition: 0.5s ease-in;
+  /* animation: float 5s 1s infinite; */
+  object-fit: cover;
+  /* animation-timing-function: ease-in-out; */
+}
+
+.works-container .work-card:nth-child(1) {
+  background: url("https://picsum.photos/160");
+}
+.works-container .work-card:nth-child(2) {
+  background: url("https://picsum.photos/150");
+}
+.works-container .work-card:nth-child(3) {
+  background: url("https://picsum.photos/200");
+}
+
+.works-container .work-card:nth-child(1) {
+  translate: -20px 20px;
+  animation-delay: -2s;
+}
+.works-container .work-card:nth-child(2) {
+  translate: -10px 10px;
+  animation-delay: -1s;
+}
+.works-container .work-card:nth-child(3) {
+  animation-delay: 0s;
+}
+
+.container .ion-icon.apart + .works-container .work-card:nth-child(1) {
+  /* animation: none; */
+  translate: 200px 100px;
+  scale: 1.5;
+  background-color: aliceblue;
+}
+.container .ion-icon.apart + .works-container .work-card:nth-child(3) {
+  /* animation: none; */
+  translate: -200px 100px;
+  scale: 1.5;
+  background-color: aliceblue;
+}
+.container .ion-icon.apart + .works-container .work-card:nth-child(2) {
+  /* animation: none; */
+  translate: 0px -200px;
+  scale: 1.5;
+  background-color: aliceblue;
+}
