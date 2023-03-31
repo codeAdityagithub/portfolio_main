@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Homemain from "../components/Homemain";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Home = () => {
   return (

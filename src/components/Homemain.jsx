@@ -26,12 +26,7 @@ const Homemain = () => {
   }, []);
 
   return (
-    <motion.div
-      animate={{
-        scale: [1, 2, 4, 4, 2, 1, 1],
-        rotate: [0, 360, 180, -180, 30, -20, 0],
-      }}
-    >
+    <motion.div animate={{}}>
       <h2 className="typed">
         <span ref={el} />
       </h2>

@@ -4,6 +4,7 @@ import WorkCard from "../components/WorkCard";
 
 const Works = () => {
   const [active, setActive] = useState(false);
+
   return (
     <div className="container">
       <div

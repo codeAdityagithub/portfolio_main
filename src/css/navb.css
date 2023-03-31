@@ -3,11 +3,14 @@
   --white: #ffffff;
   --black: black;
 }
-main {
+.super {
   height: 100vh;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
+
 nav {
   display: flex;
   align-items: center;

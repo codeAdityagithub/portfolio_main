@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const Navb = () => {
+  const location = useLocation();
+  // console.log(location);
   return (
     <>
       <main>
@@ -10,7 +14,11 @@ const Navb = () => {
             <h2 className="nav-title">Name</h2>
           </div>
           <div className="nav-right">
-            <ol className="nav-list">
+            <motion.ol
+              className="nav-list"
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+            >
               <NavLink to="/" className="nav-item">
                 Home
               </NavLink>
@@ -21,13 +29,19 @@ const Navb = () => {
               <NavLink to="contact" className="nav-item">
                 Contact
               </NavLink>
-            </ol>
+            </motion.ol>
           </div>
         </nav>
 
         <Outlet />
 
-        <footer className="footer">&copy; Aditya 2023</footer>
+        <motion.footer
+          className="footer"
+          animate={{ translateY: 0 }}
+          initial={{ translateY: 100 }}
+        >
+          &copy; Aditya 2023
+        </motion.footer>
       </main>
     </>
   );

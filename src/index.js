@@ -17,16 +17,40 @@ import Error from "./pages/Error";
 import Works from "./pages/Works";
 import Contact from "./pages/Contact";
 
+import PageTransition from "./layouts/PageTransition";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Navb />}>
-      <Route index element={<Home />} />
-      <Route path="works" element={<Works />} />
-      <Route path="contact" element={<Contact />} />
+      <Route
+        index
+        element={
+          <PageTransition>
+            <Home />
+          </PageTransition>
+        }
+      />
+      <Route
+        path="works"
+        element={
+          <PageTransition>
+            <Works />
+          </PageTransition>
+        }
+      />
+      <Route
+        path="contact"
+        element={
+          <PageTransition>
+            <Contact />
+          </PageTransition>
+        }
+      />
       <Route path="*" element={<Error />} />
     </Route>
   )
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(<RouterProvider router={router}></RouterProvider>);
