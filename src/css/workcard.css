@@ -1,0 +1,4 @@
+.workcard {
+  transition: 0.2s;
+  perspective: 10px;
+}

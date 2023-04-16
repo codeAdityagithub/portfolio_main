@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
@@ -21,7 +22,7 @@ import PageTransition from "./layouts/PageTransition";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Navb />}>
+    <Route path="/" element={<Navb />} errorElement={<Error />}>
       <Route
         index
         element={
