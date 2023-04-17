@@ -1,24 +1,30 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
 import axios from "axios";
-import { motion, useScroll } from "framer-motion";
+// import { motion, useScroll } from "framer-motion";
 
 const WorkCard = lazy(() => import("../components/WorkCard"));
 
 const Works = () => {
-  const [imgs, setImgs] = useState([]);
-  const { scrolled } = useScroll();
-  console.log(scrolled);
+  // const [imgs, setImgs] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const list = await axios.get(
-        "https://picsum.photos/v2/list?page=1&limit=4"
-      );
-      const data = await list.data;
-      setImgs(data);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const list = await axios.get(
+  //       "https://picsum.photos/v2/list?page=1&limit=4"
+  //     );
+  //     const data = await list.data;
+  //     setImgs(data);
+  //   };
+  //   fetchData();
+  // }, []);
+
+  const imgs = [
+    { id: "1", download_url: "/images/work1.png" },
+    { id: "2", download_url: "/images/work1.png" },
+    { id: "3", download_url: "/images/work1.png" },
+    { id: "4", download_url: "/images/work1.png" },
+    { id: "5", download_url: "/images/work1.png" },
+  ];
 
   return (
     <div className="works-container">

@@ -35,19 +35,14 @@ function Image({ src }) {
 }
 
 const WorkCard = (props) => {
-  const redir = () => {
-    if (props.active) {
-      window.open(`${props.href}`, "_blank");
-    }
-  };
-
   return (
     <motion.div className="work-card">
       <motion.div
         className="splash"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        variants={cardVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
         transition={{ delay: 0.5 }}
       ></motion.div>
       <Image src={props.href}></Image>
