@@ -1,0 +1,23 @@
+.contact-form {
+  width: 330px;
+  height: 550px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+}
+.contact-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactbg {
+  position: absolute;
+  max-width: 800px;
+  max-height: auto;
+  z-index: -10;
+  object-fit: cover;
+}

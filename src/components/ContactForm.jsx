@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 
 function ContactForm() {
   return (
-    <Form>
+    <Form className="contact-form mt-4 p-2">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />

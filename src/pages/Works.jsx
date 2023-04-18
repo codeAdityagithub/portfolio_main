@@ -2,7 +2,7 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import axios from "axios";
 // import { motion, useScroll } from "framer-motion";
 
-const WorkCard = lazy(() => import("../components/WorkCard"));
+import WorkCard from "../components/WorkCard";
 
 const Works = () => {
   // const [imgs, setImgs] = useState([]);
