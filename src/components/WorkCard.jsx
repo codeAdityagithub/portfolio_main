@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
+import { useLocation } from "react-router-dom";
 
 // const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 // const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 const cardVariants = {
   offscreen: {
-    y: 200,
+    y: 100,
     opacity: 0,
   },
   onscreen: {
@@ -20,7 +22,11 @@ const cardVariants = {
   },
 };
 
-function Image({ src }) {
+function Image({ src, visit }) {
+  const redir = () => {
+    window.open(visit, "_blank");
+  };
+
   return (
     <motion.div
       className="workimgdiv"
@@ -28,6 +34,7 @@ function Image({ src }) {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
+      onClick={() => redir()}
     >
       <img src={src} alt="" className="workimg" />
     </motion.div>
@@ -35,6 +42,14 @@ function Image({ src }) {
 }
 
 const WorkCard = (props) => {
+  const [hasVisited, setVisited] = useState(false);
+  const loc = useLocation();
+  useEffect(() => {
+    if (loc.pathname === "/works") {
+      setVisited(true);
+    }
+  }, [loc.pathname]);
+
   return (
     <motion.div className="work-card">
       <motion.div
@@ -45,7 +60,7 @@ const WorkCard = (props) => {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ delay: 0.5 }}
       ></motion.div>
-      <Image src={props.href}></Image>
+      <Image src={props.src} visit={props.visit}></Image>
     </motion.div>
   );
 };

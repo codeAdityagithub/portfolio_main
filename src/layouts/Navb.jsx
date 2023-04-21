@@ -1,11 +1,8 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navb = () => {
-  const location = useLocation();
-  // console.log(location);
   return (
     <>
       <main>

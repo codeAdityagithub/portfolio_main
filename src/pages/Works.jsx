@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React from "react";
 import axios from "axios";
 // import { motion, useScroll } from "framer-motion";
 
@@ -19,11 +19,21 @@ const Works = () => {
   // }, []);
 
   const imgs = [
-    { id: "1", download_url: "/images/work1.png" },
-    { id: "2", download_url: "/images/work1.png" },
-    { id: "3", download_url: "/images/work1.png" },
-    { id: "4", download_url: "/images/work1.png" },
-    { id: "5", download_url: "/images/work1.png" },
+    {
+      id: "1",
+      url: "/images/work1.png",
+      visit: "https://workconnect.onrender.com/",
+    },
+    {
+      id: "2",
+      url: "/images/work2.png",
+      visit: "https://github.com/codeAdityagithub/Restaurant-Project",
+    },
+    {
+      id: "3",
+      url: "/images/work3.png",
+      visit: "https://aditya008.pythonanywhere.com/",
+    },
   ];
 
   return (
@@ -32,8 +42,9 @@ const Works = () => {
         return (
           <WorkCard
             active={true}
-            href={img.download_url}
+            src={img.url}
             key={img.id}
+            visit={img.visit}
           ></WorkCard>
         );
       })}

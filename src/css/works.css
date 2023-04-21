@@ -1,5 +1,5 @@
 .works-container {
-  margin: 100px auto;
+  /* margin: 100px auto; */
   top: 0;
   max-width: 500px;
   padding-bottom: 100px;
@@ -17,8 +17,8 @@
   justify-content: center;
   position: relative;
   padding-top: 20px;
-  margin-top: 50px;
-  margin-bottom: 120px;
+  margin: 100px 0;
+  height: 100%;
 }
 
 .workimgdiv {
@@ -29,13 +29,48 @@
   border-radius: 20px;
   transform-origin: 10% 60%;
   /* border: 1px solid red; */
+  border: 1px solid rgba(0, 0, 0, 0.125);
+
+  overflow: hidden;
 }
 
 .workimg {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 10px;
+  position: relative;
+  transition: 0.2s all;
+}
+
+.workimgdiv:hover .workimg {
+  scale: 1.2;
+}
+
+.workimgdiv:hover {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.workimgdiv:hover::after {
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+.workimgdiv:active::after {
+  scale: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.workimgdiv::after {
+  content: "Visit";
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  scale: 1.1;
+  transition: 0.2s all;
+  position: absolute;
 }
 
 .splash {
