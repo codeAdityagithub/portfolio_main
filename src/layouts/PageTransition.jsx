@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 
 const PageTransition = ({ children }) => {
   const location = useLocation();
   const transitions = {
     key: location.pathname,
     from: { opacity: 0, transform: "scale(0.5)" },
-    enter: { opacity: 1, transform: "scale(1)" },
+    enter: {
+      opacity: 1,
+      transform: "scale(1)",
+    },
     leave: { opacity: 0, transform: "scale(0.5)" },
-    // from: {
-    //   opacity: [0,0,0, 1],
-    //   scale: [0.25, 0.25, 0.5, 0.5],
-    //   x: "25%",
-    // },
-    // enter: {
-    //   opacity: ,
-    //   scale: 0.999999,
-    //   x: 0,
-    // },
-    // leave: { opacity: 0, scale: 0, x: "-50%" },
   };
+
+  // useEffect(() => {
+  //   const sup = document.querySelector(".super");
+  //   const setPos = () => {
+  //     let scroll = Math.floor(sup.scrollTop / 10);
+  //     sup.style.backgroundPosition = `0px ${-scroll}px`;
+  //     console.log("h");
+  //   };
+  //   sup.addEventListener("scroll", setPos);
+
+  //   return () => sup.removeEventListener("scroll", setPos);
+  // }, []);
 
   return (
     <AnimatePresence mode="popLayout">
@@ -32,6 +36,7 @@ const PageTransition = ({ children }) => {
         variants={transitions}
         className="super"
       >
+        <img src="images/bgmain.svg" alt="" className="bgmain" />
         {children}
       </motion.div>
     </AnimatePresence>

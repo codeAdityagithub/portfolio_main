@@ -28,9 +28,8 @@
   background: white;
   border-radius: 20px;
   transform-origin: 10% 60%;
-  /* border: 1px solid red; */
   border: 1px solid rgba(0, 0, 0, 0.125);
-
+  transition: border 0.2s;
   overflow: hidden;
 }
 
@@ -45,10 +44,11 @@
 
 .workimgdiv:hover .workimg {
   scale: 1.2;
+  filter: blur(5px);
 }
 
 .workimgdiv:hover {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .workimgdiv:hover::after {
   font-size: 3rem;

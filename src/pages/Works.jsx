@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import axios from "axios";
-// import { motion, useScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 import WorkCard from "../components/WorkCard";
 
