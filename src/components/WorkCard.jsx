@@ -1,7 +1,4 @@
-import { useContext, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-import { useLocation } from "react-router-dom";
 
 // const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 // const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
@@ -42,13 +39,13 @@ function Image({ src, visit }) {
 }
 
 const WorkCard = (props) => {
-  const [hasVisited, setVisited] = useState(false);
-  const loc = useLocation();
-  useEffect(() => {
-    if (loc.pathname === "/works") {
-      setVisited(true);
-    }
-  }, [loc.pathname]);
+  // const [hasVisited, setVisited] = useState(false);
+  // const loc = useLocation();
+  // useEffect(() => {
+  //   if (loc.pathname === "/works") {
+  //     setVisited(true);
+  //   }
+  // }, [loc.pathname]);
 
   return (
     <motion.div className="work-card">

@@ -1,6 +1,5 @@
 :root {
   --accent1: rgb(157, 2, 213);
-  --accent2: rgb(120, 99, 255);
   --white: #ffffff;
   --black: black;
 }
@@ -50,9 +49,9 @@ html {
   justify-content: center;
 }
 
-.typed {
+.typed > span {
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 .home-keyword1 {
   font-style: italic;
@@ -62,4 +61,40 @@ html {
 }
 .home-keyword3 {
   font-family: "Roboto", sans-serif;
+}
+
+@media screen and (width>=1200px) {
+  .typed > span {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (width<1024px) {
+  .typed > span {
+    font-size: 4rem;
+  }
+}
+@media screen and (width<900px) {
+  .typed > span {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (width<768px) {
+  .typed > span {
+    font-size: 3rem;
+  }
+}
+@media screen and (width<600px) {
+  .typed > span {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (width<480px) {
+  .typed > span {
+    font-size: 2rem;
+  }
+}
+@media screen and (width<320px) {
+  .typed > span {
+    font-size: 1.5rem;
+  }
 }

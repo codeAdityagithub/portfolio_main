@@ -11,6 +11,7 @@ const Homemain = () => {
         "I am a <span class='home-keyword1'>Coder.</span>",
         "I am an <span class='home-keyword2'>Athlete.</span>",
         "I am a <span class='home-keyword3'>Human.</span>",
+        "I am Aditya",
       ],
       typeSpeed: 50,
       smartBackspace: true,

@@ -1,35 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
+import NavRight from "../components/NavRight";
+import NavTop from "../components/NavTop";
+
+const navVariants = {
+  open: {
+    height: "200px",
+  },
+  closed: {
+    height: "80px",
+  },
+};
 
 const Navb = () => {
+  const [windowWidth, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
+
   return (
     <>
+      {windowWidth > 600 ? <NavTop /> : <NavRight />}
+
       <main>
-        <nav>
-          <div className="nav-left">
-            <h2 className="nav-title">Name</h2>
-          </div>
-          <div className="nav-right">
-            <motion.ol
-              className="nav-list"
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-            >
-              <NavLink to="/" className="nav-item">
-                Home
-              </NavLink>
-
-              <NavLink to="works" className="nav-item">
-                My Works
-              </NavLink>
-              <NavLink to="contact" className="nav-item">
-                Contact
-              </NavLink>
-            </motion.ol>
-          </div>
-        </nav>
-
         <Outlet />
 
         <motion.footer
