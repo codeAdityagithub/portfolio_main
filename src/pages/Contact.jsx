@@ -21,11 +21,7 @@ const Contact = () => {
   // }, []);
 
   return (
-    <div
-      className="contact-container w-100 h-100 d-flex align-items-center justify-content-center"
-      // onMouseMove={handleMouseMove}
-    >
-      {/* <img src="images/contactbg.jpg" alt="" className="contactbg" ref={bg} /> */}
+    <div className="contact-container w-100 h-100 d-flex align-items-center justify-content-center">
       <ContactForm></ContactForm>
     </div>
   );

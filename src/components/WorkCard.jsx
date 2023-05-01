@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 // const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 const cardVariants = {
   offscreen: {
-    y: 100,
+    y: window.innerHeight > 600 ? 200 : 50,
     opacity: 0,
   },
   onscreen: {
-    y: 50,
+    y: window.innerWidth > 600 ? 50 : 0,
     opacity: 1,
     rotate: -10,
     transition: {

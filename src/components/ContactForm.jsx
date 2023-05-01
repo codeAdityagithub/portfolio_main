@@ -13,10 +13,16 @@ function ContactForm() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2, delay: 0.2 }}
       >
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Label className="form-label">Email address</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+          name="form-email"
+          className="form-input"
+        />
         <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
+          We'll never share your email{" "}
+          <span className="form-muted-remove">with anyone else.</span>
         </Form.Text>
       </motion.div>
 
@@ -26,13 +32,13 @@ function ContactForm() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2, delay: 0.3 }}
       >
-        <Form.Label>Message</Form.Label>
+        <Form.Label className="form-label">Message</Form.Label>
         <Form.Control
           as="textarea"
           placeholder="Enter your Message"
           rows={3}
           name="form-message"
-          className="form-message"
+          className="form-message form-input"
         />
       </motion.div>
 

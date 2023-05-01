@@ -223,6 +223,14 @@ nav {
   .typed > span {
     font-size: 2rem;
   }
+  #root .nav-side-toggle button {
+    right: 10px;
+    top: 10px;
+  }
+  #root .nav-side-exit button {
+    right: 10px;
+    top: 10px;
+  }
 }
 @media screen and (width<325px) {
   .nav-list {
@@ -288,5 +296,5 @@ nav {
   font-size: 2rem;
 }
 .nav-exit-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
