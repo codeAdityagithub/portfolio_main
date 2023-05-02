@@ -83,7 +83,7 @@ const NavRight = () => {
             animate="open"
             onClick={navExpand}
           >
-            <NavLink to="/" className="nav-item-vertical">
+            <NavLink to="/portfolio_main" className="nav-item-vertical">
               Home
             </NavLink>
           </motion.div>

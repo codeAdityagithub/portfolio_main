@@ -22,7 +22,7 @@ import PageTransition from "./layouts/PageTransition";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Navb />} errorElement={<Error />}>
+    <Route path="/portfolio_main" element={<Navb />} errorElement={<Error />}>
       <Route
         index
         element={

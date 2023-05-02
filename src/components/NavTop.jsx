@@ -39,7 +39,7 @@ const NavTop = () => {
           }}
         >
           <motion.div variants={itemVariants} initial="closed" animate="open">
-            <NavLink to="/" className="nav-item">
+            <NavLink to="/portfolio_main" className="nav-item">
               Home
             </NavLink>
           </motion.div>
